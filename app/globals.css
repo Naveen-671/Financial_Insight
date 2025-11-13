@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Horizon UI Dark Theme - Dark navy background with neon accents */
+    --background: 224 33% 8%; /* #0B1437 - Dark navy */
+    --foreground: 240 5% 95%; /* #f0f1f3 - Off-white text */
+
+    --muted: 224 20% 18%; /* #1a2847 - Dark gray-blue */
+    --muted-foreground: 240 3% 75%; /* #bebfc4 - Light gray */
+    --muted-foreground-light: 240 3% 75% / 0.6;
+    --muted-foreground-dark: 240 3% 75% / 0.8;
+
+    --card: 224 28% 13%; /* #151d35 - Card background */
+    --card-foreground: 240 5% 95%;
+
+    --popover: 224 28% 13%;
+    --popover-foreground: 240 5% 95%;
+
+    /* Primary: Vibrant Blue (Horizon accent) */
+    --primary: 220 100% 55%; /* #1a8fff - Neon blue */
+    --primary-foreground: 224 33% 8%;
+    --primary-dark: 220 100% 45%; /* #0066ff - Darker neon blue */
+    --primary-light: 280 100% 60%; /* #b040ff - Violet accent */
+
+    /* Secondary: Purple/Violet accent */
+    --secondary: 280 100% 50%; /* #9933ff - Violet */
+    --secondary-foreground: 224 33% 8%;
+
+    --accent: 180 100% 50%; /* #00d4ff - Cyan accent */
+    --accent-foreground: 224 33% 8%;
+
+    --border: 224 20% 25%; /* #2d3f5f - Subtle dark border */
+    --border-light: 224 20% 25% / 0.3;
+    --border-dark: 224 20% 25%;
+
+    --ring: 220 100% 55%;
+
+    --radius: 1rem;
+
+    /* Status colors */
+    --success: 120 100% 45%; /* #00b300 */
+    --warning: 40 100% 50%; /* #ffaa00 */
+    --danger: 0 100% 50%; /* #ff0000 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glass-morphism and glow effects for Horizon UI */
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/40 rounded-xl;
+  }
+
+  .glass-border {
+    @apply border border-primary/30 shadow-lg shadow-primary/10;
+  }
+
+  .glow-accent {
+    @apply shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300;
+  }
+
+  .neon-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .card-hover {
+    @apply hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300;
+  }
+}
